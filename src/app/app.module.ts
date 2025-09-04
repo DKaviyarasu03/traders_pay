@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TermsAndConditionsComponent } from './policies/terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegisterComponent,
     LoginComponent,
     LoaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,
