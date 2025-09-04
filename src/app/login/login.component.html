@@ -1,0 +1,52 @@
+<div class="register-section d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="register-card mx-auto">
+       <h2 class="title text-center">Welcome Back</h2>
+      <p class="subtitle text-center">Login to continue</p>
+
+     <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="login-form">
+        <!-- Mobile Number -->
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            placeholder="Mobile Number"
+            [(ngModel)]="loginData.number"
+            name="number"
+            required
+            #number="ngModel"
+            class="form-control"
+          />
+          <small class="text-danger" *ngIf="loginForm.submitted && number.invalid">
+            Mobile Number is required
+          </small>
+        </div>
+
+        <!-- Password -->
+      <div class="form-group position-relative">
+        <label for="password">Password</label>
+
+        
+     
+
+        <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            name="password"  
+            [(ngModel)]="loginData.password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+        />
+
+        <!-- Toggle Button -->
+        <span class="toggle-password" (click)="togglePassword()">
+            <i class="bi" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+        </span>       
+        </div>
+
+        <!-- Submit -->
+        <button type="submit"  class="btn-register w-100 mt-3">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

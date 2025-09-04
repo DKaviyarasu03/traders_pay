@@ -1,0 +1,157 @@
+.dashboard-wrapper {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: linear-gradient(to right, #6a11cb, #ff4b2b);
+  color: white;
+  border-radius: 8px;
+}
+ 
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.logout-btn {
+  background: white;
+  border: none;
+  color: #ff4b2b;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Wallet Card */
+.wallet-card {
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #28a745;
+  transition: transform 0.3s ease;
+}
+
+.wallet-card:hover {
+  transform: translateY(-4px);
+}
+
+.wallet-icon {
+  font-size: 2rem;
+  color: #28a745;
+}
+
+.wallet-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.wallet-status {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.wallet-status.active {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.wallet-amount {
+  margin-top: 8px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Store Info */
+.store-info {
+  margin-top: 20px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.store-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Loader */
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .wallet-title,
+  .store-name {
+    font-size: 1rem;
+  }
+
+  .wallet-icon {
+    font-size: 1.6rem;
+  }
+}
+
+
+.topbar {
+  background: linear-gradient(90deg, #7b2ff7, #f107a3, #ff4b2b);
+  color: white;
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.page-item.active .page-link {
+  background-color: #7b2ff7;
+  border-color: #7b2ff7;
+}
+/* Make pagination wrap in mobile */
+.pagination {
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.pagination .page-item .page-link {
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+/* Center pagination on mobile */
+@media (max-width: 576px) {
+  .pagination {
+    justify-content: center;
+  }
+}
+
+.modal-body img {
+  border: 2px solid #ddd;
+}

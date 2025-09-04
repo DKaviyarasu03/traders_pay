@@ -1,0 +1,74 @@
+<div class="register-section d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="register-card mx-auto">
+      <h2 class="title text-center">Create Your Account</h2>
+      <p class="subtitle text-center">Register now and simplify your payments</p>
+
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="register-form" novalidate>
+        <!-- Full Name -->
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            placeholder="Full Name"
+            [(ngModel)]="registerData.name"
+            name="name"
+            required
+            minlength="3"
+            #name="ngModel"
+            class="form-control"
+            [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched || registerForm.submitted)}"
+          />
+          <small class="text-danger d-block"
+                 *ngIf="name.invalid && (name.dirty || name.touched || registerForm.submitted)">
+            <span *ngIf="name.errors?.['required']">Full Name is required</span>
+            <span *ngIf="name.errors?.['minlength']">Full Name must be at least 3 characters</span>
+          </small>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group mb-3">
+          <input
+            type="number"
+            placeholder="Mobile Number"
+            [(ngModel)]="registerData.number"
+            name="number"
+            required
+            pattern="^[0-9]{10}$"
+            #number="ngModel"
+            class="form-control"
+            [ngClass]="{'is-invalid': number.invalid && (number.dirty || number.touched || registerForm.submitted)}"
+          />
+          <small class="text-danger d-block"
+                 *ngIf="number.invalid && (number.dirty || number.touched || registerForm.submitted)">
+            <span *ngIf="number.errors?.['required']">Mobile Number is required</span>
+            <span *ngIf="number.errors?.['pattern']">Enter a valid 10-digit number</span>
+          </small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group mb-3">
+          <input
+            type="email"
+            placeholder="Email Address"
+            [(ngModel)]="registerData.email"
+            name="email"
+            required
+            email
+            #email="ngModel"
+            class="form-control"
+            [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched || registerForm.submitted)}"
+          />
+          <small class="text-danger d-block"
+                 *ngIf="email.invalid && (email.dirty || email.touched || registerForm.submitted)">
+            <span *ngIf="email.errors?.['required']">Email is required</span>
+            <span *ngIf="email.errors?.['email']">Enter a valid email</span>
+          </small>
+        </div>
+
+        <button type="submit" class="btn-register w-100" >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
